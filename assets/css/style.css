@@ -1,7 +1,7 @@
 /* ==========================================================================
-   MBLI Employee Handbook — Design System
+   MBLI Handbooks — Shared Design System
    Warm, human, mission-forward visual language.
-   Tokens: color, type, spacing — see README for full spec.
+   Used by both the Employee Handbook and the Leadership Handbook.
    ========================================================================== */
 
 /* ---- Fonts (self-hosted variable fonts) --------------------------------- */
@@ -458,3 +458,12 @@ img { max-width: 100%; }
 .site-footer__logo { height: 30px; width: auto; }
 .site-footer__name { font-family: var(--font-sans); font-weight: 700; font-size: .8rem; color: var(--muted); letter-spacing: .03em; }
 .site-footer__disclaimer { font-size: .78rem; color: var(--muted); }
+
+/* ---- Restricted-document badge ------------------------------------------------------------------ */
+.badge-restricted {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-sans); font-weight: 700; font-size: .68rem; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--accent); background: var(--sand); border: 1px solid var(--sand-border);
+  border-radius: 20px; padding: 5px 12px;
+}
+.sidebar__brand-badge { margin: 0 20px 16px; }
