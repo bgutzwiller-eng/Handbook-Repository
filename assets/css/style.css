@@ -467,3 +467,45 @@ img { max-width: 100%; }
   border-radius: 20px; padding: 5px 12px;
 }
 .sidebar__brand-badge { margin: 0 20px 16px; }
+
+/* ---- Sidebar restricted-link row ------------------------------------------------------------------ */
+.sidebar__restricted-link {
+  display: flex; align-items: center; gap: 8px;
+  font-family: var(--font-sans); font-weight: 600; font-size: .78rem; color: var(--muted);
+  margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--hair);
+}
+.sidebar__restricted-link:hover { color: var(--accent); text-decoration: none; }
+.sidebar__restricted-link .lock-icon { flex-shrink: 0; opacity: .7; }
+
+/* ---- Passcode gate -------------------------------------------------------------------------------- */
+body.is-gated { overflow: hidden; }
+body.is-gated .app-shell { visibility: hidden; }
+.gate {
+  position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center;
+  padding: 24px;
+  background: radial-gradient(120% 90% at 50% 0%, #FFFDFA 0%, var(--paper) 55%, #F4EADC 100%);
+}
+.gate[hidden] { display: none; }
+.gate__card {
+  width: 100%; max-width: 380px; background: #fff; border: 1px solid var(--hair); border-radius: 18px;
+  padding: clamp(28px, 4vw, 40px); box-shadow: 0 12px 40px rgba(42,36,32,.08); text-align: center;
+}
+.gate__logo { height: 48px; width: auto; margin: 0 auto 18px; filter: drop-shadow(0 6px 14px rgba(var(--accent-rgb), .16)); }
+.gate__title { font-family: var(--font-serif); font-weight: 600; font-size: 1.4rem; letter-spacing: -.01em; margin-bottom: 8px; }
+.gate__desc { font-size: .92rem; color: var(--muted); margin: 0 0 22px; }
+.gate__form { display: flex; flex-direction: column; gap: 12px; }
+.gate__label { text-align: left; font-family: var(--font-sans); font-weight: 700; font-size: .74rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.gate__input {
+  width: 100%; padding: 12px 14px; border: 1px solid var(--hair); border-radius: 9px; background: var(--card-off-white);
+  font-family: var(--font-sans); font-size: 1rem; color: var(--ink); outline: none; min-height: 44px; text-align: center;
+  letter-spacing: .04em;
+}
+.gate__input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(var(--accent-rgb), .12); }
+.gate__submit {
+  min-height: 44px; border: none; border-radius: 9px; background: var(--accent); color: #fff;
+  font-family: var(--font-sans); font-weight: 700; font-size: .92rem; cursor: pointer; transition: background .15s;
+}
+.gate__submit:hover { background: var(--accent-dark); }
+.gate__error { color: var(--accent); font-size: .84rem; margin-top: 2px; }
+.gate__error[hidden] { display: none; }
+.gate__footnote { margin-top: 22px; font-size: .76rem; color: var(--muted); }
