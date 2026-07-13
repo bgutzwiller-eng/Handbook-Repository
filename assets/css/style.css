@@ -468,14 +468,15 @@ img { max-width: 100%; }
 }
 .sidebar__brand-badge { margin: 0 20px 16px; }
 
-/* ---- Sidebar restricted-link row ------------------------------------------------------------------ */
-.sidebar__restricted-link {
+/* ---- Sidebar footer link row (related documents) --------------------------------------------------- */
+.sidebar__footer-link {
   display: flex; align-items: center; gap: 8px;
   font-family: var(--font-sans); font-weight: 600; font-size: .78rem; color: var(--muted);
   margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--hair);
 }
-.sidebar__restricted-link:hover { color: var(--accent); text-decoration: none; }
-.sidebar__restricted-link .lock-icon { flex-shrink: 0; opacity: .7; }
+.sidebar__footer-link:hover { color: var(--accent); text-decoration: none; }
+.sidebar__footer-link .lock-icon { flex-shrink: 0; opacity: .7; }
+.sidebar__footer-link + .sidebar__footer-link { border-top: none; margin-top: 0; padding-top: 4px; }
 
 /* ---- Passcode gate -------------------------------------------------------------------------------- */
 body.is-gated { overflow: hidden; }
@@ -509,3 +510,22 @@ body.is-gated .app-shell { visibility: hidden; }
 .gate__error { color: var(--accent); font-size: .84rem; margin-top: 2px; }
 .gate__error[hidden] { display: none; }
 .gate__footnote { margin-top: 22px; font-size: .76rem; color: var(--muted); }
+
+/* ---- Pull quote ------------------------------------------------------------------------------------ */
+.pull-quote {
+  font-family: var(--font-serif); font-style: italic; font-size: 1.35rem; color: var(--accent);
+  line-height: 1.5; margin: 1.8rem 0; max-width: 60ch; border-left: 3px solid var(--accent); padding-left: 22px;
+}
+.pull-quote strong { color: inherit; font-weight: 600; }
+
+/* ---- Closing statement (bookends the cover) --------------------------------------------------------- */
+.closing {
+  scroll-margin-top: 64px; padding: var(--sec-pad) var(--sec-pad-x); text-align: center;
+  background: radial-gradient(120% 90% at 50% 0%, #FFFDFA 0%, var(--paper) 60%, #F4EADC 100%);
+  border-top: 1px solid var(--hair);
+}
+.closing__logo { height: 48px; width: auto; margin: 0 auto 22px; filter: drop-shadow(0 6px 14px rgba(var(--accent-rgb), .16)); }
+.closing__quote {
+  font-family: var(--font-serif); font-style: italic; font-size: clamp(1.4rem, 3vw, 1.9rem); color: var(--accent);
+  max-width: 700px; margin: 0 auto; line-height: 1.55;
+}
