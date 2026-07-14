@@ -1,0 +1,218 @@
+/* ==========================================================================
+   MBLI Staff Handbook Library — Home Page
+   Built from the "Flame Background" Claude Design handoff: a large,
+   tone-on-tone flame mark anchors a dark hero, cooling into the site's
+   paper-toned library grid below.
+   ========================================================================== */
+
+:root {
+  --home-hero-bg: #1B120F;
+  --home-hero-bg-2: #241713;
+  --home-hero-ink: #FBF6EF;
+  --home-hero-muted: #D8C9BE;
+  --home-hero-line: rgba(251, 246, 239, 0.16);
+}
+
+body.home { background: var(--paper); }
+
+/* ---- Hero ---------------------------------------------------------------- */
+.home-hero {
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(120% 100% at 20% 0%, var(--home-hero-bg-2) 0%, var(--home-hero-bg) 60%);
+  color: var(--home-hero-ink);
+}
+
+.home-hero__mask {
+  position: absolute;
+  inset: -8% -10% -10% auto;
+  right: -12%;
+  width: 78%;
+  min-width: 560px;
+  mask-image: url('../img/flame-mask.png');
+  -webkit-mask-image: url('../img/flame-mask.png');
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  background-color: var(--accent-dark);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.home-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(20px, 3vw, 30px) clamp(24px, 6vw, 56px) 0;
+}
+
+.home-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.home-header__logo { height: 34px; width: auto; }
+
+.home-header__brand-text {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1.02rem;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  color: var(--home-hero-ink);
+}
+
+.home-header__brand-text span {
+  display: block;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--home-hero-muted);
+}
+
+.home-header__nav-link {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.86rem;
+  color: var(--home-hero-muted);
+  border: 1px solid var(--home-hero-line);
+  border-radius: 20px;
+  padding: 9px 18px;
+}
+.home-header__nav-link:hover { color: var(--home-hero-ink); border-color: var(--home-hero-ink); text-decoration: none; }
+
+.home-hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(56px, 9vw, 108px) clamp(24px, 6vw, 56px) clamp(72px, 10vw, 128px);
+}
+
+.home-hero__eyebrow {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.76rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(var(--accent-rgb), 0.85);
+  margin-bottom: 18px;
+}
+
+.home-hero__title {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: clamp(2.1rem, 4.6vw, 3.4rem);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  max-width: 15ch;
+  color: var(--home-hero-ink);
+  margin-bottom: 22px;
+}
+
+.home-hero__subtitle {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--home-hero-muted);
+  max-width: 52ch;
+  margin-bottom: 36px;
+}
+
+.home-hero__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 14px 26px;
+  border-radius: 9px;
+}
+.home-hero__cta:hover { background: var(--accent-dark); color: #fff; text-decoration: none; }
+
+/* ---- Library grid --------------------------------------------------------- */
+.home-library {
+  padding: var(--sec-pad) var(--sec-pad-x) calc(var(--sec-pad) * 1.1);
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.home-library__heading { max-width: 34ch; margin-bottom: 44px; }
+.home-library__heading .eyebrow { margin-bottom: 12px; }
+.home-library__heading h2 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  letter-spacing: -0.01em;
+}
+.home-library__heading p { color: var(--muted); font-size: 1rem; margin: 12px 0 0; }
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 22px;
+}
+
+.doc-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: var(--card-white);
+  border: 1px solid var(--hair);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(42, 36, 32, 0.05);
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+}
+.doc-card:hover {
+  border-color: rgba(var(--accent-rgb), 0.35);
+  box-shadow: 0 16px 36px rgba(42, 36, 32, 0.1);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.doc-card__top { display: flex; align-items: center; justify-content: space-between; }
+
+.badge-public {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-sans); font-weight: 700; font-size: 0.68rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--muted); background: var(--sand); border: 1px solid var(--sand-border);
+  border-radius: 20px; padding: 5px 12px;
+}
+
+.doc-card__title {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1.22rem;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+}
+
+.doc-card__desc { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.55; margin: 0; flex-grow: 1; }
+
+.doc-card__cta {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.86rem;
+  color: var(--accent);
+}
+.doc-card:hover .doc-card__cta { color: var(--accent-dark); }
+
+@media (max-width: 640px) {
+  .home-header__nav-link { display: none; }
+  .home-hero__mask { opacity: 0.28; width: 100%; right: -20%; }
+}
