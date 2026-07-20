@@ -55,7 +55,7 @@ html { scroll-behavior: smooth; }
   --divider-numeral: rgba(var(--accent-rgb), 0.9);
   --callout-important-bg: #FBECEA;
   --callout-important-border: #F1C6C4;
-  --zebra-row: #FCF8F2;
+  --zebra-row: #F3EADF;
   --selection: #F6D5CF;
   --signature-rule: #C9BEAF;
 
